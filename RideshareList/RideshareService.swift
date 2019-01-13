@@ -33,6 +33,8 @@ struct ServiceLocation: Codable {
 struct RideshareService: Codable {
     let name: String
     let url: URL
+    let description: String
+    let locationDescription: String
     let locations: [ServiceLocation]
     let apps: [App]
     let contact: ContactInfo

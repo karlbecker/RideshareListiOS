@@ -37,6 +37,7 @@ class MasterViewController: UITableViewController {
                     do {
                         let decoder = JSONDecoder()
                         let services = try decoder.decode([RideshareService].self, from: data)
+                        
                         self.objects.append(contentsOf: services)
                         self.tableView.reloadData()
                     }
@@ -82,6 +83,7 @@ class MasterViewController: UITableViewController {
 
         let object = objects[indexPath.row]
         cell.textLabel!.text = object.name
+        cell.detailTextLabel?.text = object.locationDescription
         return cell
     }
 
