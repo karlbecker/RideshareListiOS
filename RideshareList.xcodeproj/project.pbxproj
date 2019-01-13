@@ -15,6 +15,7 @@
 		250E207B21EAA8A50050C0B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250E207921EAA8A50050C0B2 /* LaunchScreen.storyboard */; };
 		250E208621EAA8A50050C0B2 /* RideshareListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E208521EAA8A50050C0B2 /* RideshareListTests.swift */; };
 		250E209121EAA8A60050C0B2 /* RideshareListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E209021EAA8A60050C0B2 /* RideshareListUITests.swift */; };
+		250E209F21EAA9910050C0B2 /* RideshareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E209E21EAA9910050C0B2 /* RideshareService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		250E208C21EAA8A50050C0B2 /* RideshareListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideshareListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		250E209021EAA8A60050C0B2 /* RideshareListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideshareListUITests.swift; sourceTree = "<group>"; };
 		250E209221EAA8A60050C0B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		250E209E21EAA9910050C0B2 /* RideshareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideshareService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				250E206E21EAA8A30050C0B2 /* AppDelegate.swift */,
 				250E207021EAA8A30050C0B2 /* MasterViewController.swift */,
+				250E209E21EAA9910050C0B2 /* RideshareService.swift */,
 				250E207221EAA8A30050C0B2 /* DetailViewController.swift */,
 				250E207421EAA8A30050C0B2 /* Main.storyboard */,
 				250E207721EAA8A50050C0B2 /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250E207321EAA8A30050C0B2 /* DetailViewController.swift in Sources */,
+				250E209F21EAA9910050C0B2 /* RideshareService.swift in Sources */,
 				250E207121EAA8A30050C0B2 /* MasterViewController.swift in Sources */,
 				250E206F21EAA8A30050C0B2 /* AppDelegate.swift in Sources */,
 			);
