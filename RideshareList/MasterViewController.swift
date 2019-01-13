@@ -11,20 +11,42 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
-
+    var objects = [RideshareService]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        navigationItem.rightBarButtonItem = addButton
+        
+        //navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        let apiUrl = URL(string: "https://karlbecker.github.io/RidesharingData/api/v1/rideshare-services.json")!
+        URLSession.shared.dataTask(with: apiUrl) { (data, response, error) -> Void in
+            guard error == nil else {
+                return
+            }
+            
+            if let data = data {
+                // Check if data was received successfully
+                DispatchQueue.main.async {
+                    do {
+                        let decoder = JSONDecoder()
+                        let services = try decoder.decode([RideshareService].self, from: data)
+                        
+                        self.objects.append(contentsOf: services)
+                        self.tableView.reloadData()
+                    }
+                    catch {
+                        print("Unexpected error: \(error)")
+                    }
+                }
+            }
+        }.resume()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,19 +54,12 @@ class MasterViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
 
-    @objc
-    func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
-    }
-
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -66,8 +81,9 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row]
+        cell.textLabel!.text = object.name
+        cell.detailTextLabel?.text = object.locationDescription
         return cell
     }
 
