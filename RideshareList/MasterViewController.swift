@@ -25,7 +25,7 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-        let apiUrl = URL(string: "https://ridesharelist.herokuapp.com/api/v1/rideshare-services.json")!
+        let apiUrl = URL(string: "https://karlbecker.github.io/RidesharingData/api/v1/rideshare-services.json")!
         URLSession.shared.dataTask(with: apiUrl) { (data, response, error) -> Void in
             guard error == nil else {
                 return
