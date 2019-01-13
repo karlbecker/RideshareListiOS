@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 enum AppPlatform : String, Codable {
     case ios
@@ -20,8 +21,8 @@ struct App: Codable {
 }
 
 struct ContactInfo:  Codable {
-    let email: String
-    let phone: String
+    let email: String?
+    let phone: String?
 }
 
 struct ServiceLocation: Codable {

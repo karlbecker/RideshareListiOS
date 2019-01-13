@@ -16,6 +16,8 @@
 		250E208621EAA8A50050C0B2 /* RideshareListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E208521EAA8A50050C0B2 /* RideshareListTests.swift */; };
 		250E209121EAA8A60050C0B2 /* RideshareListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E209021EAA8A60050C0B2 /* RideshareListUITests.swift */; };
 		250E209F21EAA9910050C0B2 /* RideshareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E209E21EAA9910050C0B2 /* RideshareService.swift */; };
+		250E20A121EAD3A80050C0B2 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E20A021EAD3A80050C0B2 /* OverviewViewController.swift */; };
+		250E20A321EAE8550050C0B2 /* RideshareAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E20A221EAE8550050C0B2 /* RideshareAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		250E209021EAA8A60050C0B2 /* RideshareListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideshareListUITests.swift; sourceTree = "<group>"; };
 		250E209221EAA8A60050C0B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		250E209E21EAA9910050C0B2 /* RideshareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideshareService.swift; sourceTree = "<group>"; };
+		250E20A021EAD3A80050C0B2 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		250E20A221EAE8550050C0B2 /* RideshareAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideshareAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				250E208421EAA8A50050C0B2 /* RideshareListTests */,
 				250E208F21EAA8A60050C0B2 /* RideshareListUITests */,
 				250E206C21EAA8A30050C0B2 /* Products */,
+				25386D1521EAFBB800123174 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,7 +108,9 @@
 			children = (
 				250E206E21EAA8A30050C0B2 /* AppDelegate.swift */,
 				250E207021EAA8A30050C0B2 /* MasterViewController.swift */,
+				250E20A021EAD3A80050C0B2 /* OverviewViewController.swift */,
 				250E209E21EAA9910050C0B2 /* RideshareService.swift */,
+				250E20A221EAE8550050C0B2 /* RideshareAnnotation.swift */,
 				250E207221EAA8A30050C0B2 /* DetailViewController.swift */,
 				250E207421EAA8A30050C0B2 /* Main.storyboard */,
 				250E207721EAA8A50050C0B2 /* Assets.xcassets */,
@@ -129,6 +136,13 @@
 				250E209221EAA8A60050C0B2 /* Info.plist */,
 			);
 			path = RideshareListUITests;
+			sourceTree = "<group>";
+		};
+		25386D1521EAFBB800123174 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +213,14 @@
 				TargetAttributes = {
 					250E206A21EAA8A30050C0B2 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					250E208021EAA8A50050C0B2 = {
 						CreatedOnToolsVersion = 10.1;
@@ -262,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250E20A321EAE8550050C0B2 /* RideshareAnnotation.swift in Sources */,
 				250E207321EAA8A30050C0B2 /* DetailViewController.swift in Sources */,
 				250E209F21EAA9910050C0B2 /* RideshareService.swift in Sources */,
+				250E20A121EAD3A80050C0B2 /* OverviewViewController.swift in Sources */,
 				250E207121EAA8A30050C0B2 /* MasterViewController.swift in Sources */,
 				250E206F21EAA8A30050C0B2 /* AppDelegate.swift in Sources */,
 			);
@@ -440,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8734YSS986;
 				INFOPLIST_FILE = RideshareList/Info.plist;
@@ -458,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8734YSS986;
 				INFOPLIST_FILE = RideshareList/Info.plist;
